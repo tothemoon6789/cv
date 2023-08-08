@@ -1,0 +1,70 @@
+:root {
+  --purple: #9827e3;
+  --cyan: #85e0e0;
+}
+
+.carousel {
+  background-image: linear-gradient(135deg, var(--purple), var(--cyan));
+  height: 500px;
+  position: relative;
+}
+.carousel .box {
+  right: 100px;
+  top: 100px;
+  position: absolute;
+}
+
+.header-left-blob {
+  width: 50vw;
+}
+
+#in {
+  animation: rotateLeft 5s infinite linear;
+}
+
+.wrap-out {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.wrap-out #out {
+  animation: rotateRight 2s infinite linear;
+}
+
+.wrap-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.wrap-img img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+@keyframes rotateLeft {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateRight {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}/*# sourceMappingURL=style.css.map */
