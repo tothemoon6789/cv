@@ -18,11 +18,13 @@ html {
 }
 body {
   font-family: "Montserrat", sans-serif;
+  background-color: gray;
 }
 .carousel {
   background-image: linear-gradient(135deg, $purple, $cyan);
   height: 500px;
   position: relative;
+  box-shadow: 2px 2px 2px 0 rgba($color: #000000, $alpha: 0.2);
   .background-purple {
     position: absolute;
     right: 30%;
@@ -261,4 +263,10 @@ body {
         background-color: red;
       }
   }
+}
+.hr {
+    padding: 20px;
+    white-space: nowrap;
+    color: white;
+    overflow: auto;
 }
