@@ -30,6 +30,10 @@
     <div class="carousel">
       <img class="header-left-blob" src="./images/bloleft.svg" alt="..." />
       <div class="background-purple"></div>
+      <div class="welcom">
+        <!-- <span>KÍNH CHÀO</span> <br>
+         <span></span>NHÀ TUYỂN DỤNG -->
+      </div>
       <div class="box">
         <div class="wrap-circle">
           <svg
@@ -155,5 +159,87 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script>
+      $(document).ready(function () {
+        $(".box").css("right", "15%");
+        $(".header-left-blob").css("opacity", 1);
+        var promise = Promise.resolve();
+        promise
+          .then(function () {
+            return innerHtml('K |');
+          })
+          .then(function () {
+            return innerHtml('Kí |');
+          })
+          .then(function () {
+            return innerHtml('Kín |');
+          })
+          .then(function () {
+            return innerHtml('Kính |');
+          })
+          .then(function () {
+            return innerHtml('Kính c |');
+          })
+          .then(function () {
+            return innerHtml('Kính ch |');
+          })
+          .then(function () {
+            return innerHtml('Kính cha |');
+          })
+          .then(function () {
+            return innerHtml('Kính chào |');
+          })
+          .then(function () {
+            return innerHtml('Kính chào <br>|');
+          })
+          .then(function () {
+            return innerHtml('Kính chào <br> N|');
+          })
+          .then(function () {
+            return innerHtml('Kính chào <br> Nh|');
+          })
+          .then(function () {
+            return innerHtml('Kính chào <br> Nhà|');
+          })
+          .then(function () {
+            return innerHtml('Kính chào <br> Nhà t|');
+          })
+          .then(function () {
+            return innerHtml('Kính chào <br> Nhà t|');
+          })
+          .then(function () {
+            return innerHtml('Kính chào <br> Nhà tu|');
+          })
+          .then(function () {
+            return innerHtml('Kính chào <br> Nhà tuy|');
+          })
+          .then(function () {
+            return innerHtml('Kính chào <br> Nhà tuyể|');
+          })
+          .then(function () {
+            return innerHtml('Kính chào <br> Nhà tuyển|');
+          })
+          .then(function () {
+            return innerHtml('Kính chào <br> Nhà tuyển d|');
+          })
+          .then(function () {
+            return innerHtml('Kính chào <br> Nhà tuyển du|');
+          })
+          .then(function () {
+            return innerHtml('Kính chào <br> Nhà tuyển dun|');
+          })
+          .then(function () {
+            return innerHtml('Kính chào <br> Nhà tuyển dụng|');
+          })
+        function innerHtml(a) {
+          return new Promise(function (resolve) {
+            setTimeout(() => {
+              $(".welcom").html(a);
+              resolve();
+            }, 100);
+          });
+        }
+      });
+    </script>
   </body>
 </html>

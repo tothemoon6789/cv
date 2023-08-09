@@ -29,15 +29,31 @@ body {
     background-color: rgba($color: $cyan, $alpha: 0.2);
     border-radius: 50%;
     box-shadow: 0 0 40px 0 rgba($color: $cyan, $alpha: 0.5);
+    
   }
   .header-left-blob {
+    transition: all 3s;
     width: 50vw;
+    opacity: 0;
+  }
+  .welcom {
+    color: white;
+    font-weight: 700;
+    font-size: 60px;
+    margin-top: -50px;
+    span {
+        &:nth-child(1){
+            font-size: 40px;
+        }
+    }
   }
   .box {
-    right: 15%;
     top: 20%;
+    transition: all 1s;
+    right: -100%;
     position: absolute;
     padding: 10px;
+    
     border-radius: 5px;
     animation: cardAnimation 5s infinite alternate-reverse;
 
