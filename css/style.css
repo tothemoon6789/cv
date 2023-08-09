@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
 }
@@ -178,4 +182,54 @@ body {
   to {
     box-shadow: 4px 4px 16px 0 rgba(152, 39, 227, 0.2), 4px 4px 16px 0 rgba(152, 39, 227, 0.2), 4px 4px 16px 0 rgba(152, 39, 227, 0.2), 4px 4px 16px 0 rgba(152, 39, 227, 0.2), 4px 4px 16px 0 rgba(152, 39, 227, 0.2);
   }
+}
+.components {
+  max-height: 400px;
+  background-color: #9827e3;
+  overflow: auto;
+  display: flex;
+  scroll-behavior: smooth;
+}
+.components .navbar {
+  background-color: yellow;
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow: auto;
+  min-width: 150px;
+}
+.components .navbar ul {
+  list-style-type: none;
+  padding: 0;
+}
+.components .content .accodition .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+.components .content .accodition .title:hover {
+  font-weight: 300;
+  background-color: #85e0e0;
+}
+.components .content .accodition .title .close {
+  padding: 10px;
+}
+.components .content .accodition .active {
+  background-color: #9827e3;
+  box-shadow: 0 0 8px 0 #85e0e0, 0 0 8px 0 #85e0e0, 0 0 8px 0 #85e0e0, 0 0 8px 0 #85e0e0, 0 0 8px 0 #85e0e0;
+}
+.components .content .accodition .body {
+  transition: 0.3s ease-out;
+  overflow: hidden;
+  max-height: 0;
+  font-weight: 200;
+}
+.components .content .alert {
+  background-color: red;
 }/*# sourceMappingURL=style.css.map */
