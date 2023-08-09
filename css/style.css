@@ -1,28 +1,34 @@
-:root {
-  --purple: #9827e3;
-  --cyan: #85e0e0;
+body {
+  font-family: "Montserrat", sans-serif;
 }
 
 .carousel {
-  background-image: linear-gradient(135deg, var(--purple), var(--cyan));
+  background-image: linear-gradient(135deg, #9827e3, #85e0e0);
   height: 500px;
   position: relative;
 }
-.carousel .box {
-  right: 100px;
-  top: 100px;
+.carousel .background-purple {
   position: absolute;
+  right: 30%;
+  top: 50%;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(133, 224, 224, 0.2);
+  border-radius: 50%;
+  box-shadow: 0 0 40px 0 rgba(133, 224, 224, 0.5);
 }
-
-.header-left-blob {
+.carousel .header-left-blob {
   width: 50vw;
 }
-
-#in {
-  animation: rotateLeft 5s infinite linear;
+.carousel .box {
+  right: 15%;
+  top: 20%;
+  position: absolute;
+  padding: 10px;
+  border-radius: 5px;
+  animation: cardAnimation 5s infinite alternate-reverse;
 }
-
-.wrap-out {
+.carousel .box .wrap-circle {
   position: absolute;
   top: 0;
   left: 0;
@@ -30,13 +36,21 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: 200px;
 }
-.wrap-out #out {
-  animation: rotateRight 2s infinite linear;
+.carousel .box #out {
+  height: 250px;
+  animation: rotateRight 5s infinite linear;
+  transform-origin: center;
+  transform-box: fill-box;
 }
-
-.wrap-img {
+.carousel .box #in {
+  height: 200px;
+  animation: rotateLeft 10s infinite linear;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+.carousel .box .wrap-img {
   position: absolute;
   top: 0;
   left: 0;
@@ -44,12 +58,81 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: 200px;
 }
-.wrap-img img {
-  width: 80px;
-  height: 80px;
+.carousel .box .wrap-img img {
+  width: 155px;
+  height: 155px;
   border-radius: 50%;
+}
+.carousel .box .footer {
+  margin-top: 200px;
+}
+.carousel .box .footer .title {
+  text-align: center;
+  font-weight: 500;
+  margin-top: 40px;
+  color: white;
+}
+.carousel .box .footer .small-title {
+  text-align: center;
+  font-weight: 200;
+  color: white;
+}
+.carousel .box .footer .content {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+.carousel .box .footer .content div {
+  padding: 10px;
+  font-weight: 300;
+  color: white;
+}
+.carousel .box .footer .content div:nth-child(1) {
+  border-right: 1px solid white;
+}
+.carousel .box .footer button {
+  background-color: #e37230;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: white;
+  transition: all 0.15s;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.carousel .box .footer button:hover {
+  background-color: #9827e3;
+  color: #85e0e0;
+  box-shadow: 0 0 4px 0 #85e0e0, 0 0 8px 0 #85e0e0, 0 0 16px 0 #85e0e0, 0 0 20px 0 #85e0e0;
+}
+.carousel .box .footer button:hover svg {
+  box-shadow: 0 0 4px 0 #85e0e0, 0 0 8px 0 #85e0e0, 0 0 16px 0 #85e0e0, 0 0 20px 0 #85e0e0;
+}
+.carousel .box .footer button:active {
+  background-color: #85e0e0;
+  color: #9827e3;
+}
+.carousel .box .footer button:active .line {
+  stroke: #9827e3;
+}
+.carousel .box .footer svg {
+  margin-right: 10px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+#Subtract {
+  animation: subtracAnimate 2s infinite alternate-reverse;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#out_2 {
+  animation: subtracAnimate 2s infinite alternate-reverse;
+  transform-origin: center;
+  transform-box: fill-box;
 }
 
 @keyframes rotateLeft {
@@ -66,5 +149,21 @@
   }
   to {
     transform: rotate(-360deg);
+  }
+}
+@keyframes subtracAnimate {
+  from {
+    fill: #9827e3;
+  }
+  to {
+    fill: #85e0e0;
+  }
+}
+@keyframes cardAnimation {
+  from {
+    box-shadow: 4px 4px 16px 0 rgba(133, 224, 224, 0.2), 4px 4px 16px 0 rgba(133, 224, 224, 0.2), 4px 4px 16px 0 rgba(133, 224, 224, 0.2), 4px 4px 16px 0 rgba(133, 224, 224, 0.2), 4px 4px 16px 0 rgba(133, 224, 224, 0.2);
+  }
+  to {
+    box-shadow: 4px 4px 16px 0 rgba(152, 39, 227, 0.2), 4px 4px 16px 0 rgba(152, 39, 227, 0.2), 4px 4px 16px 0 rgba(152, 39, 227, 0.2), 4px 4px 16px 0 rgba(152, 39, 227, 0.2), 4px 4px 16px 0 rgba(152, 39, 227, 0.2);
   }
 }/*# sourceMappingURL=style.css.map */

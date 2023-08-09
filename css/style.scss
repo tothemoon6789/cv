@@ -1,24 +1,9 @@
-:root {
-  --purple: #9827e3;
-  --cyan: #85e0e0;
-}
-.carousel {
-  background-image: linear-gradient(135deg, var(--purple), var(--cyan));
-  height: 500px;
-  position: relative;
-  .box {
-    right: 100px;
-    top: 100px;
-    position: absolute;
-  }
-}
-.header-left-blob {
-  width: 50vw;
-}
-#in {
-  animation: rotateLeft 5s infinite linear;
-}
-.wrap-out {
+$purple: #9827e3;
+$cyan: #85e0e0;
+$oragne: #e37230;
+$green: #c8e322;
+
+@mixin absoluteCenter() {
   position: absolute;
   top: 0;
   left: 0;
@@ -26,25 +11,137 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
-  #out {
-    animation: rotateRight 2s infinite linear;
+  height: 200px;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+}
+.carousel {
+  background-image: linear-gradient(135deg, $purple, $cyan);
+  height: 500px;
+  position: relative;
+  .background-purple {
+    position: absolute;
+    right: 30%;
+    top: 50%;
+    width: 200px;
+    height: 200px;
+    background-color: rgba($color: $cyan, $alpha: 0.2);
+    border-radius: 50%;
+    box-shadow: 0 0 40px 0 rgba($color: $cyan, $alpha: 0.5);
+  }
+  .header-left-blob {
+    width: 50vw;
+  }
+  .box {
+    right: 15%;
+    top: 20%;
+    position: absolute;
+    padding: 10px;
+    border-radius: 5px;
+    animation: cardAnimation 5s infinite alternate-reverse;
+
+    .wrap-circle {
+      @include absoluteCenter();
+    }
+    #out {
+      height: 250px;
+      animation: rotateRight 5s infinite linear;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+    #in {
+      height: 200px;
+      animation: rotateLeft 10s infinite linear;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+    .wrap-img {
+      @include absoluteCenter();
+      img {
+        width: 155px;
+        height: 155px;
+        border-radius: 50%;
+      }
+    }
+    .footer {
+      //   position: relative;
+      //   top: 150px;
+      // transform: translateY(100px);
+      margin-top: 200px;
+      .title {
+        text-align: center;
+        font-weight: 500;
+        margin-top: 40px;
+        color: white;
+      }
+      .small-title {
+        text-align: center;
+        font-weight: 200;
+        color: white;
+      }
+      .content {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5px;
+        div {
+          padding: 10px;
+          font-weight: 300;
+          color: white;
+          &:nth-child(1) {
+            border-right: 1px solid white;
+          }
+        }
+      }
+      button {
+        background-color: $oragne;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        color: white;
+        transition: all 0.15s;
+        text-transform: uppercase;
+        box-shadow: 4px 4px 8px 0 rgba($color: #000000, $alpha: 0.2);
+        &:hover {
+          background-color: $purple;
+          color: $cyan;
+          box-shadow: 0 0 4px 0 rgba($color: $cyan, $alpha: 1),
+            0 0 8px 0 rgba($color: $cyan, $alpha: 1),
+            0 0 16px 0 rgba($color: $cyan, $alpha: 1),
+            0 0 20px 0 rgba($color: $cyan, $alpha: 1);
+          svg {
+            box-shadow: 0 0 4px 0 rgba($color: $cyan, $alpha: 1),
+              0 0 8px 0 rgba($color: $cyan, $alpha: 1),
+              0 0 16px 0 rgba($color: $cyan, $alpha: 1),
+              0 0 20px 0 rgba($color: $cyan, $alpha: 1);
+          }
+        }
+        &:active {
+          background-color: $cyan;
+          color: $purple;
+          .line {
+            stroke: $purple;
+          }
+        }
+      }
+      svg {
+        margin-right: 10px;
+        overflow: hidden;
+        border-radius: 5px;
+      }
+    }
   }
 }
-.wrap-img {
-    position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-  }
+#Subtract {
+  animation: subtracAnimate 2s infinite alternate-reverse;
+  transform-origin: center;
+  transform-box: fill-box;
+  // transform: translateX(200px);
+}
+#out_2 {
+  animation: subtracAnimate 2s infinite alternate-reverse;
+  transform-origin: center;
+  transform-box: fill-box;
 }
 @keyframes rotateLeft {
   from {
@@ -61,5 +158,29 @@
   }
   to {
     transform: rotate(-360deg);
+  }
+}
+@keyframes subtracAnimate {
+  from {
+    fill: $purple;
+  }
+  to {
+    fill: $cyan;
+  }
+}
+@keyframes cardAnimation {
+  from {
+    box-shadow: 4px 4px 16px 0 rgba($color: $cyan, $alpha: 0.2),
+    4px 4px 16px 0 rgba($color: $cyan, $alpha: 0.2),
+    4px 4px 16px 0 rgba($color: $cyan, $alpha: 0.2),
+    4px 4px 16px 0 rgba($color: $cyan, $alpha: 0.2),
+    4px 4px 16px 0 rgba($color: $cyan, $alpha: 0.2);
+  }
+  to {
+    box-shadow: 4px 4px 16px 0 rgba($color: $purple, $alpha: 0.2),
+      4px 4px 16px 0 rgba($color: $purple, $alpha: 0.2),
+      4px 4px 16px 0 rgba($color: $purple, $alpha: 0.2),
+      4px 4px 16px 0 rgba($color: $purple, $alpha: 0.2),
+      4px 4px 16px 0 rgba($color: $purple, $alpha: 0.2);
   }
 }
